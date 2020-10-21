@@ -1,0 +1,25 @@
+{
+  "name": "exercicio-semana-11",
+  "version": "1.0.0",
+  "description": "O projeto desta semana é uma atividade onde devemos aplicar o conhecimento apreendido nas últimas semanas do curso de backend da {reprograma}:",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lealclarissa/exercicio-semana-11.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lealclarissa/exercicio-semana-11/issues"
+  },
+  "homepage": "https://github.com/lealclarissa/exercicio-semana-11#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "nodemon": "^2.0.6"
+  }
+}
