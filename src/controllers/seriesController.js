@@ -24,4 +24,15 @@ const getAllSeries = (req, res) => {
   res.status(200).send(series);
 };
 
-module.exports = { createSerie, getAllSeries };
+const getSerieById = (req, res) => {
+  const serieId = req.params.id;
+  const serieFound = series.find((serie) => serie.id == serieId);
+
+  if (serieFound) {
+    res.status(200).send(serieFound);
+  } else {
+    res.status(404).send({ message: "Série não encontrada!" });
+  }
+};
+
+module.exports = { createSerie, getAllSeries, getSerieById };

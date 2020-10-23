@@ -4,5 +4,6 @@ const controller = require("../controllers/seriesController");
 
 router.post("/", controller.createSerie);
 router.get("/", controller.getAllSeries);
+router.get("/:id", controller.getSerieById);
 
 module.exports = router;
