@@ -20,4 +20,8 @@ const createSerie = (req, res) => {
   );
 };
 
-module.exports = { createSerie };
+const getAllSeries = (req, res) => {
+  res.status(200).send(series);
+};
+
+module.exports = { createSerie, getAllSeries };
