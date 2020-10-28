@@ -4,15 +4,15 @@
     "name": "Fleabag",
     "genre": ["comedia", "drama"],
     "synopsis": "Uma mulher lidando com problemas de relacionamento, frustração sexual e profissional, conflitos familiares",
-    "liked": true,
-    "seasons": []
+    "seasons": [],
+    "liked": true
   },
   {
     "id": 2,
     "name": "Star Trek Discovery",
     "genre": ["aventura", "ficcao"],
     "synopsis": "Dez anos antes da famosa missão do Capitão Kirk, a tripulação do USS Discovery se depara com novos mundos e civilizações, sendo obrigada a se aprofundar em temas familiares e explorar situações até então desconhecidas",
-    "liked": true,
-    "seasons": []
+    "seasons": [],
+    "liked": true
   }
 ]
