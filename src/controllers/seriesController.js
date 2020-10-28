@@ -91,16 +91,49 @@ const updateLikedStatus = (req, res) => {
         }
       );
     } else {
-      res
-        .status(404)
-        .send({
-          message:
-            "A série cujo status 'liked' seria atualizado não foi encontrada!",
-        });
+      res.status(404).send({
+        message:
+          "A série cujo status 'liked' seria atualizado não foi encontrada!",
+      });
     }
   } catch (err) {
     console.log(err);
     res.status(500).send("Erro na API");
+  }
+};
+
+const deleteSerie = (req, res) => {
+  try {
+    const serieId = req.params.id;
+    const serieFound = series.filter((serie) => serie.id == serieId);
+
+    if (serieFound && serieFound.length > 0) {
+      serieFound.forEach((serie) => {
+        const serieIndex = series.indexOf(serie);
+        series.splice(serieIndex, 1);
+      });
+
+      fs.writeFile(
+        "./src/models/series.json",
+        JSON.stringify(series),
+        "utf8",
+        function (err) {
+          if (err) {
+            res.status(500).send({ message: err });
+          } else {
+            console.log("Série deletada do arquivo com sucesso!");
+            res.sendStatus(204);
+          }
+        }
+      );
+    } else {
+      res.status(404).send({
+        message: "Série a ser apagada não foi encontrada no arquivo!",
+      });
+    }
+  } catch (err) {
+    console.log(err);
+    res.status(500).send({ message: "Erro ao deletar a série!" });
   }
 };
 
@@ -110,4 +143,5 @@ module.exports = {
   getSerieById,
   updateSerie,
   updateLikedStatus,
-}
+  deleteSerie,
+};
