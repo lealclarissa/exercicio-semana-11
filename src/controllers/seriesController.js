@@ -35,4 +35,34 @@ const getSerieById = (req, res) => {
   }
 };
 
-module.exports = { createSerie, getAllSeries, getSerieById };
+const updateSerie = (req, res) => {
+  const serieId = req.params.id;
+  const serieToUpdate = req.body;
+
+  const serieFound = series.find((serie) => serie.id == serieId);
+  const serieIndex = series.indexOf(serieFound);
+
+  if (serieIndex >= 0) {
+    series.splice(serieIndex, 1, serieToUpdate);
+    fs.writeFile(
+      "./src/models/series.json",
+      JSON.stringify(series),
+      "utf8",
+      function (err) {
+        if (err) {
+          res.status(500).send({ message: err });
+        } else {
+          console.log("A série foi atualizada com sucesso");
+          const serieUpdated = series.find((serie) => serie.id == serieId);
+          res.status(200).send(serieUpdated);
+        }
+      }
+    );
+  } else {
+    res
+      .status(404)
+      .send({ message: "A série a ser atualizada não foi encontrada!" });
+  }
+};
+
+module.exports = { createSerie, getAllSeries, getSerieById, updateSerie };
