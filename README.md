@@ -1,9 +1,11 @@
-# Exercício Semana 11
+# API - Séries
+
+[![people watching tv](./public/images/series.jpg)](https://br.freepik.com/vetores/pessoas)
 
 O projeto desta semana é uma atividade onde devemos aplicar o conhecimento apreendido nas últimas semanas do curso de backend da {reprograma}:
 
 >**C**reate - Criar  
->**R**ead - Ler  
+>**R**ead/Retrieve - Ler/buscar  
 >**U**pdate - Atualizar  
 >**D**elete - Apagar
 
